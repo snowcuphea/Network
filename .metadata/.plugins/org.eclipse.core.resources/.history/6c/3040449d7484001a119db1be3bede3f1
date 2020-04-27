@@ -1,0 +1,44 @@
+package basic;
+
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
+
+public class URLTest02 {
+	public static void main(String[] args) {
+		
+		try {
+			URL url = new URL("http://cafefiles.naver.net/20120209_226/pododumok_13287752996753FNE4_jpg/%C0%E5%B5%BF%B0%C7_5_pododumok.jpg");
+			
+			FileInputStream fi = new FileInputStream(url);
+			
+			/*BufferedImage bi = ImageIO.read(url);
+			
+			Fil*/
+			
+            /*// Image 저장할 파일
+            File imgFile = new File(imgFilePath);
+           
+            // Image 저장
+            ImageIO.write(image, imgFormat, imgFile);*/
+			
+			
+		} catch (MalformedURLException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

@@ -1,0 +1,44 @@
+package network;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+//바이너리데이터를 읽고 쓰지 않는 경우 - 문자열 
+public class MyNetClient04 {
+
+	public static void main(String[] args) {
+		Socket client = null;
+		BufferedReader in = null;//input용으로 쓴다.
+		PrintWriter out = null; //output용으로 쓴다.
+	
+			try {
+				client = new Socket("70.12.115.53", 12345); //=> 생성하는게 접속
+				System.out.println("서버접속완료..."+client);
+				
+				in = new BufferedReader(new InputStreamReader(
+						client.getInputStream()));
+				out = new PrintWriter(client.getOutputStream());
+				
+				//***통신시작*****
+				//1.클라이언트 <- 서버
+				String msg = in.readLine();
+				System.out.println("서버가 보내온 메세지:"+msg);
+				
+				//2. 클라이언트 -> 서버
+				out.println("Hello Server! I'm Client");
+				out.flush();
+					
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}
+
+}

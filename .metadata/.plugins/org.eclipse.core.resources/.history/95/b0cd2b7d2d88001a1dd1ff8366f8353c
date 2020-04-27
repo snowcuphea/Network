@@ -1,0 +1,19 @@
+package network;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MyNetServer04 {
+	Socket client = null;
+	BufferedReader in = null;//input용으로 쓴다.
+	PrintWriter out = null; //output용으로 쓴다.
+	
+	public static void main(String[] args) {
+		ServerSocket server = new ServerSocket(12345);
+		
+	}
+
+	
+}
